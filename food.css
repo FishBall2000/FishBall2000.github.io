@@ -1,0 +1,217 @@
+body
+        {
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        a
+        {
+            /*隱藏所有超連結底線*/
+            text-decoration:none;
+        }
+
+        /*上方選單*/
+        .nav
+        {
+            display: flex;                      /*彈性排版*/
+            justify-content: space-between;     /*兩側均分子物件*/
+            align-items: center;                /*垂直方向的置中*/
+            height: 60px;                       /*高度*/
+        }
+        .nav_btn
+        {
+            width: 25px;
+            padding: 0 15px;
+        }
+        .branding
+        {
+            display: block;
+            margin: 0;
+            color: rgb(60, 60, 60);
+            font-size: 15pt;
+            font-weight: bolder;
+            font-family: sans-serif;
+            line-height: 98%;
+        }
+
+        /*餐點圖片*/
+        .pic 
+        { 
+            text-align: center; 
+        }
+        .pic_obj  
+        {  
+            width: 100%; 
+            max-width: 500px;
+            margin: 20px auto;  
+        }
+
+        /*餐點資訊卡*/
+        .card
+        {
+            background-color: #fff;
+            padding: 50px 30px;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+
+            font-family: sans-serif;
+        }
+        /*中文名&價位&英文名*/
+        .info
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .name_c
+        {
+            font-size: 20pt;
+            font-weight: bolder;
+        }
+        .price
+        {
+            font-size: 25pt;
+            font-weight: bolder;
+        }
+        .name_e
+        {
+            font-weight: bolder;
+            margin-bottom: 20px;
+        }
+        /*地區&餐廳&介紹&配料*/
+        .place
+        {
+            margin: 20px auto 30px auto;
+            color: gray;
+            font-size: 11pt;
+            font-weight: lighter;
+            font-family: sans-serif;
+        }
+        .deta_area
+        {
+            display: inline-block;
+            padding: 1px 10px;
+            
+            border-radius: 8px;         /*圓角*/
+            border: solid 1px gray;   /*邊線*/
+        }
+        .deta_rest
+        {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        .deta_obj
+        {
+            margin: 40px 0;
+
+            color: gray;
+            font-size: 12pt;
+            font-family: sans-serif;
+        }
+        /*推薦指數&星星&辣度&辣椒*/
+        .evalu
+        {
+            margin: 3px 0;
+            font-size: 12pt;
+        }
+        .evalu > div
+        {
+            display: inline-block;
+            font-weight: bold;
+        }
+        .evalu > img
+        {
+            margin: 5px 0 0 0;
+            height: 20px;
+        }
+
+        /*美味分數&分數&上餐時間&時間*/
+        .scor
+        {
+            display: flex;                      /*彈性排版*/
+            justify-content: space-between;     /*兩側均分子物件*/
+            margin: 50px 0;
+        }
+        .scor > .scor_obj
+        {
+            width: 50%;
+            text-align: center;
+            border-left: 1px solid #ccc;
+            color: gray;
+            font-size: 11pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .scor > .scor_obj:first-child
+        {
+            border-left: none;
+        }
+        .scor > .scor_obj > .value
+        {
+            color: black;
+            font-size: 20pt;
+            font-weight: bolder;
+            font-family: sans-serif;
+        }
+
+        /*評論者&評論*/
+        .com
+        {
+            background-color: rgba(220, 220, 220, 0.3);
+            margin: 15px 0;
+            padding: 10px 0;
+            border-radius: 20px;
+        }
+        .critic
+        {
+            margin: 10px 20px 5px 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .com_obj
+        {
+            margin: 10px 20px 20px 20px;
+            color: gray;
+            font-size: 11pt;
+            font-family: sans-serif;
+        }
+
+        /*上一位&下一位*/
+        .nav_d
+        {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 80px; 
+        }
+        .back_btn
+        {
+            display: inline-block;
+            background-color: black;
+            margin: 10px;
+            border-radius: 15px;
+            width: 200px;
+            height: 60px;
+            vertical-align: middle;
+            box-shadow: 5px 5px 20px rgba(56, 56, 56, 0.6);
+        }
+        .back_btn > a > div
+        {
+            padding: 10px;
+            margin: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .like_btn
+        {
+            display: inline-block;
+            background-color: rgb(255, 200, 25);
+            border-radius: 15px;
+            width: auto;
+            height: 60px;
+            vertical-align: middle;
+        }
+        .like_btn > img
+        {
+            padding: 10px;
+            margin: 0 10px 0 8px;
+            width: 40px;
+        }

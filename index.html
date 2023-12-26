@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodpocket</title>
+    <style>
+        body
+        {
+            margin: 0;
+            padding: 0 0 200px 0;
+        }
+        a
+        {
+            /*隱藏所有超連結底線*/
+            text-decoration:none;
+        }
+
+        /*隨機按鈕*/
+        .random_btn
+        {
+            /*浮動對齊整個頁面*/
+            position: fixed;
+            bottom: 80px;
+            right: 45px;
+
+            /*讓子物件上下&水平置中*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #F6C944;
+            height: 70px;
+            width: 70px;
+            border-radius: 35px;
+            box-shadow: 0px 5px 15px rgba(219, 188, 97, 0.864);
+        }
+        .random_btn > img
+        {
+            width: 70%;
+        }
+
+        /*黃底部分*/
+        .title_area
+        {
+            background-color: #F6C944;
+            padding: 80px 50px;
+            margin: 0 0 -90px 0;
+            border-radius: 0 0 80px 0;
+        }
+        /*選單按鈕*/
+        .menu_btn
+        {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+            width: 25px;
+            text-align: center;
+            margin: 15px;
+        }
+        .menu_btn > img
+        {
+            width: 100%; 
+            max-width: 500px;
+        }
+        /*網頁主題*/
+        .title_name
+        {
+            margin: 0 0 30px 0;
+            /*設定文字/顏色/大小/粗細/樣式/字型*/
+            color: black;
+            font-size: 30pt;
+            font-weight: 900;
+            /*font-style: normal;*/
+            font-family: sans-serif;
+
+            line-height: 40px;
+        }
+        /*地區分類*/
+        .title_place
+        {
+            margin: 25px auto;
+            font-size: 12pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        /*地區分類按鈕(黑)*/
+        .place_btn_b
+        {
+            display: inline-block;
+            padding: 1px 8px;
+
+            color: white;
+            
+            border-radius: 8px;         /*圓角*/
+            background-color: black;
+        }
+        /*地區分類按鈕(白)*/
+        .place_btn_w
+        {
+            display: inline-block;
+            padding: 1px 8px;
+
+            color: black;
+            
+            border-radius: 8px;         /*圓角*/
+            background-color: #ffffff;
+        }
+
+        /*極度推薦*/
+        .recom
+        {
+            position: absolute;
+            top: 235px;
+            right: 35px;
+
+            background-color: black;
+            padding: 5px 10px;
+            border-radius: 15px;
+
+            color: #F6C944;
+            font-size: 10pt;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        /*餐點按鈕*/
+        .food_btn
+        {
+            display: flex;                      /*彈性排版*/
+            justify-content: space-between;     /*兩側均分子物件*/
+            background-color: #ffffff;
+            margin: 20px 20px;
+            border-radius: 20px;
+
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        /*餐點圖片*/
+        .pic_area
+        {
+            width: 150px;
+            text-align: center;
+            margin: 10px auto;
+        }
+        .pic_area > img
+        {
+            width: 100%; 
+            max-width: 500px;
+        }
+        /*餐點資訊*/
+        .text_area
+        {
+            width: 70%;
+            padding: 20px 0px;
+        }
+        /*餐點名稱*/
+        .name
+        {
+            color: black;
+            font-size: 12pt;
+            font-weight: 900;
+            font-family: sans-serif;
+        }
+        /*餐廳區域&名稱*/
+        .place
+        {
+            margin: 5px auto;
+            color: gray;
+            font-size: 10pt;
+            font-weight: lighter;
+            font-family: sans-serif;
+        }
+        /*餐廳區域*/
+        .place_area
+        {
+            display: inline-block;
+            padding: 0px 8px;
+            
+            border-radius: 8px;         /*圓角*/
+            border: solid 2px rgb(181, 181, 181);   /*邊線*/
+        }
+        /*餐廳名稱*/
+        .place_rest
+        {
+            display: inline-block;
+            margin: 5px;
+        }
+        .evalu
+        {
+            display: flex;                      /*彈性排版*/
+            justify-content: space-between;     /*兩側均分子物件*/
+            margin: 10px auto 10px auto;
+        }
+        /*餐點評分*/
+        .evalu_stars
+        {
+            display: inline-block;
+            vertical-align: middle;
+
+            width: 100px;
+        }
+        .evalu_stars > img
+        {
+            margin: auto 20px auto 0px;
+
+            width: 100%;
+        }
+        /*餐點價錢*/
+        .evalu_price
+        {
+            display: inline-block;
+            vertical-align: middle;
+            margin: auto 20px auto 0px;
+
+            color: black;
+            font-size: 12pt;
+            font-weight: 900;
+            font-family: sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 隨機按鈕 -->
+    <div class="random_btn">
+        <img src="img/random.png">
+    </div>
+
+    <!-- 黃底部分 -->
+    <div class="title_area">
+
+        <!-- 選單按鈕 -->
+        <div class="menu_btn">
+            <img src="img/btn_menu.svg">
+        </div>
+
+        <!-- 網頁主題&地區分類按鈕 -->
+        <div class="title_name">FOOD<br>POCKET</div>
+        <div class="title_place">
+            <div class="place_btn_b">全部</div>
+            <div class="place_btn_w">景美</div>
+            <div class="place_btn_w">大坪林</div>
+            <div class="place_btn_w">新店</div>
+        </div>
+    </div>
+
+    <!-- 餐點按鈕區 -->
+    <div>
+        <!-- 極度推薦 -->
+        <div class="recom">極度推薦</div>
+
+        <!-- 餐點按鈕01 -->
+        <a href="food_01.html" class="food_btn">
+            <!-- 餐點圖片 -->
+            <div class="pic_area">
+                <img src="img/pizza01.png">
+            </div>
+            <!-- 餐點資訊 -->
+            <div class="text_area">
+                <!-- 餐點名稱 -->
+                <div class="name">雙層美式臘腸披薩</div>
+                <!-- 餐廳區域&餐廳名稱 -->
+                <div class="place">
+                    <div class="place_area">景美</div>
+                    <div class="place_rest">PIZZA HUT必勝客</div>
+                </div>
+                <!-- 餐點評分&餐點價錢 -->
+                <div class="evalu">
+                    <div class="evalu_stars">
+                        <img src="img/4stars.png">
+                    </div>
+                    <div class="evalu_price">$565</div>
+                </div>
+            </div>
+        </a>
+
+        <!-- 餐點按鈕02 -->
+        <a href="food_02.html" class="food_btn">
+            <!-- 餐點圖片 -->
+            <div class="pic_area">
+                <img src="img/pizza02.png">
+            </div>
+            <!-- 餐點資訊 -->
+            <div class="text_area">
+                <!-- 餐點名稱 -->
+                <div class="name">熱帶鳳梨鮮蝦披薩</div>
+                <!-- 餐廳區域&餐廳名稱 -->
+                <div class="place">
+                    <div class="place_area">景美</div>
+                    <div class="place_rest">PIZZA HUT必勝客</div>
+                </div>
+                <!-- 餐點評分&餐點價錢 -->
+                <div class="evalu">
+                    <div class="evalu_stars">
+                        <img src="img/5stars.png">
+                    </div>
+                    <div class="evalu_price">$199</div>
+                </div>
+            </div>
+        </a>
+
+        <!-- 餐點按鈕03 -->
+        <a href="food_03.html" class="food_btn">
+            <!-- 餐點圖片 -->
+            <div class="pic_area">
+                <img src="img/pizza03.png">
+            </div>
+            <!-- 餐點資訊 -->
+            <div class="text_area">
+                <!-- 餐點名稱 -->
+                <div class="name">白醬雞培根披薩</div>
+                <!-- 餐廳區域&餐廳名稱 -->
+                <div class="place">
+                    <div class="place_area">景美</div>
+                    <div class="place_rest">PIZZA HUT必勝客</div>
+                </div>
+                <!-- 餐點評分&餐點價錢 -->
+                <div class="evalu">
+                    <div class="evalu_stars">
+                        <img src="img/4stars.png">
+                    </div>
+                    <div class="evalu_price">$265</div>
+                </div>
+            </div>
+        </a>
+
+        <!-- 餐點按鈕04 -->
+        <a href="food_04.html" class="food_btn">
+            <!-- 餐點圖片 -->
+            <div class="pic_area">
+                <img src="img/pizza04.png">
+            </div>
+            <!-- 餐點資訊 -->
+            <div class="text_area">
+                <!-- 餐點名稱 -->
+                <div class="name">臘腸起司三重奏大披薩</div>
+                <!-- 餐廳區域&餐廳名稱 -->
+                <div class="place">
+                    <div class="place_area">景美</div>
+                    <div class="place_rest">PIZZA HUT必勝客</div>
+                </div>
+                <!-- 餐點評分&餐點價錢 -->
+                <div class="evalu">
+                    <div class="evalu_stars">
+                        <img src="img/3stars.png">
+                    </div>
+                    <div class="evalu_price">$265</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div></div>
+</body>
+</html>
